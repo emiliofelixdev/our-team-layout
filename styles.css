@@ -1,0 +1,280 @@
+:root {
+  --body-bg: #fffefe;
+  --card-bg: #f3f4f6;
+  --h1-color: #000000;
+  --p-color-none-team: #394150;
+  --our-team-p-color: #263fa9;
+  --h2-color: #fffefe;
+  --p-team-card-color: #f3f4f6;
+  --person-1: #c1b6f8;
+  --person-2: #edacd2;
+  --person-3: #9dc4f8;
+  --person-4: #f8d8b0;
+  --person-5: #86e7d4;
+  --heading-size: 2.5rem;
+  --label-size: 1.25rem;
+  --body-text: 1rem;
+}
+
+body {
+  background-color: var(--body-bg);
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.team-card {
+  background-color: var(--card-bg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "header header member-1 member-2"
+    "all-members member-3 member-4 member-5";
+  max-width: 1280px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+  background-image: url(./resources/Background_decor.svg);
+  background-repeat: no-repeat;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 1rem;
+  margin: 2rem;
+  padding: 0;
+}
+
+.our {
+  color: var(--our-team-p-color);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: var(--body-text);
+}
+
+header h1 {
+  color: var(--h1-color);
+  font-size: var(--heading-size);
+  margin-top: 1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.intro {
+  font-size: var(--body-text);
+  font-weight: 400;
+  color: var(--p-color-none-team);
+  max-width: 470px;
+  margin-top: 0.8rem;
+}
+
+.member-1 {
+  grid-area: member-1;
+  background-color: var(--person-1);
+}
+
+.member-2 {
+  grid-area: member-2;
+  background-color: var(--person-2);
+}
+
+.member-3 {
+  grid-area: member-3;
+  background-color: var(--person-3);
+}
+
+.member-4 {
+  grid-area: member-4;
+  background-color: var(--person-4);
+}
+
+.member-5 {
+  grid-area: member-5;
+  background-color: var(--person-5);
+}
+
+.member-1,
+.member-2,
+.member-3,
+.member-4,
+.member-5 {
+  z-index: 100;
+  aspect-ratio: 1/1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.member-1::after,
+.member-2::after,
+.member-3::after,
+.member-4::after,
+.member-5::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 2;
+}
+
+article h2,
+article p {
+  position: relative;
+  z-index: 3;
+}
+
+article h2 {
+  font-size: var(--label-size);
+  color: var(--h2-color);
+  font-weight: 500;
+  margin-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+article p {
+  font-size: 0.9rem;
+  color: var(--p-team-card-color);
+  font-weight: 300;
+  margin-left: 1.2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.all-members {
+  grid-area: all-members;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+.all-members a {
+  text-decoration: none;
+  color: var(--p-color-none-team);
+  display: flex;
+  align-items: center;
+  color: var(--p-color-none-team);
+  font-size: var(--body-text);
+  font-weight: 400;
+}
+
+article img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.4s ease-in-out;
+}
+
+article:hover img {
+  transform: scale(1.08);
+}
+
+.author-info {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--p-color-none-team);
+}
+
+.author-info a {
+  text-decoration: none;
+  color: var(--our-team-p-color);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  body {
+    height: auto;
+    overflow: visible;
+    padding: 3rem 0;
+  }
+
+  .author-info {
+    position: relative;
+    bottom: auto;
+    margin-top: 3rem;
+  }
+
+  .team-card {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "header header header"
+      "member-1 member-2 member-3"
+      "all-members member-4 member-5";
+    margin: 0.2rem;
+  }
+
+  header {
+    margin: 2rem 2rem 1rem 2rem;
+  }
+
+  article p {
+    font-size: 0.65rem;
+    margin-bottom: 0.6rem;
+  }
+
+  article h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "member-1" "member-2" "member-3" "member-4" "member-5" "all-members";
+    margin: 1rem;
+    border-radius: 16px;
+  }
+
+  header {
+    margin: 2rem 1.5rem 1rem 1.5rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .all-members {
+    margin: 2rem 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .our {
+    font-size: 0.8rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro {
+    font-size: 0.9rem;
+  }
+}
