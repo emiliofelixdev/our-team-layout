@@ -1,77 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="title" content="Meet the Team Section" />
+    <meta name="description" content="Meet the team page" />
+    <meta name="robots" content="index, follow" />
+    <link rel="preload" as="image" href="./resources/person_1.png" />
+    <!--I need to add to all the images that are in the page -->
     <link
       rel="icon"
       href="resources/favicon.ico"
       type="image/x-icon"
       sizes="96x96"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Meet the Team Section | devChallenges.io</title>
-
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-      }
-
-      .author-info {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 16px;
-        color: rgb(55, 65, 81);
-      }
-
-      .author-info a {
-        text-decoration: none;
-      }
-    </style>
   </head>
+
   <body>
-    <!-- 
+    <section class="team-card">
+      <header>
+        <p>Our Team</p>
+        <h1>Meet the brain</h1>
+        <p>
+          We are proud to have them as part of our community and look forward to
+          continuing to push the boundaries of what's possible in the world of
+          digital art.
+        </p>
+      </header>
 
-    Our team
-    
-    Meet the brain
-    
-    We are proud to have them as part of our community and look forward to continuing to push the boundaries of what's possible in the world of digital art.
-    
-    Liam Novak
-    
-    Software Engineer
-    
-    Sophia Moretti
-    
-    Business Development Manager
-    
-    See all members
-    
-    Ethan Rossi
-    
-    Business Development Manager
-    
-    Isabella Ricci
-    
-    UX Designer
-    
-    Noah Conti
-    
-    Content Creator
+      <article class="member-1">
+        <img
+          src="./resources/person_1.png"
+          alt="picture of Liam Novak"
+          width="400"
+          height="400"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <h2>Liam Novak</h2>
+        <p>Software Engineer</p>
+      </article>
 
-     -->
+      <article class="member-2">
+        <img
+          src="./resources/person_2.png"
+          alt="picture of Sophia Moretti"
+          width="400"
+          height="400"
+          loading="lazy"
+        />
+        <h2>Sophia Moretti</h2>
+        <p>Business Development Manager</p>
+      </article>
+
+      <div class="all-members">
+        <p><a href="#">See all members</a></p>
+        <img src="./resources/arrow up right.svg" alt="" loading="lazy" />
+      </div>
+
+      <article class="member-3">
+        <img
+          src="./resources/person_3.png"
+          alt="picture of Ethan Rossi"
+          width="400"
+          height="400"
+          loading="lazy"
+        />
+        <h2>Ethan Rossi</h2>
+        <p>Business Development Manager</p>
+      </article>
+
+      <article class="member-4">
+        <img
+          src="./resources/person_4.png"
+          alt="picture of Isabella Ricci"
+          width="400"
+          height="400"
+          loading="lazy"
+        />
+        <h2>Isabella Ricci</h2>
+        <p>UX Designer</p>
+      </article>
+
+      <article class="member-5">
+        <img
+          src="./resources/person_5.png"
+          alt="picture of Noah Conti"
+          width="400"
+          height="400"
+          loading="lazy"
+        />
+        <h2>Noah Conti</h2>
+        <p>Content Creator</p>
+      </article>
+    </section>
 
     <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
+      Coded by
+      <a href="https://github.com/emiliofelixdev" target="_blank"
+        >Emilio Felix</a
+      >
+      | Challenge by
       <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
         >devChallenges.io</a
       >.
